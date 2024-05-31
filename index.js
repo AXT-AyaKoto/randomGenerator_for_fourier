@@ -33,9 +33,9 @@ const y2 = Math.floor(Math.random() * (HEIGHT - 6)) + 3;
 const distance = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
 
 /**
- * 距離の1.1倍〜1.8倍の間で、ランダムな値を"紐の長さ"として生成する(1mm単位)
+ * 距離の1.1倍〜2倍の間で、ランダムな値を"紐の長さ"として生成する(1mm単位)
  */
-const ropeLength = Math.floor(Math.random() * (distance * 0.7) + distance * 1.1);
+const ropeLength = Math.floor(Math.random() * (distance * 0.9) + distance * 1.1);
 
 /**
  * 結果をまとめて表示する
@@ -48,5 +48,5 @@ console.log(`\
 
 2点間の距離: ${distance.toFixed(2)}mm
 紐の長さ: ${ropeLength}mm
-(倍率 : 約${(ropeLength / distance).toFixed(4)}倍)
+(倍率 : 約${(ropeLength / distance).toFixed(2)}倍)
 `);
