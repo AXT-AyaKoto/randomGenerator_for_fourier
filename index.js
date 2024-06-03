@@ -14,39 +14,39 @@ console.log(`\
  * 定数の定義 : 幅・高さ
  */
 /** @type {Number} - 板の幅。単位はmm*/
-const WIDTH = 600;
+const W = 600;
 /** @type {Number} - 板の高さ。単位はmm */
-const HEIGHT = 900;
+const H = 900;
 
 /**
  * XY平面上に点を2つとる。
  * 周り3mmを取り除いて、1mm単位でとる
  */
-const x1 = Math.floor(Math.random() * (WIDTH - 6)) + 3;
-const y1 = Math.floor(Math.random() * (HEIGHT - 6)) + 3;
-const x2 = Math.floor(Math.random() * (WIDTH - 6)) + 3;
-const y2 = Math.floor(Math.random() * (HEIGHT - 6)) + 3;
+const x = Math.floor(Math.random() * (W - 6)) + 3;
+const y = Math.floor(Math.random() * (H - 6)) + 3;
+const X = Math.floor(Math.random() * (W - 6)) + 3;
+const Y = Math.floor(Math.random() * (H - 6)) + 3;
 
 /**
  * 2点間の距離を求める
  */
-const distance = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+const d = Math.sqrt((x - X) ** 2 + (y - Y) ** 2);
 
 /**
  * 距離の1.1倍〜2倍の間で、ランダムな値を"紐の長さ"として生成する(1mm単位)
  */
-const ropeLength = Math.floor(Math.random() * (distance * 0.9) + distance * 1.1);
+const r = Math.floor(Math.random() * (d * 0.9) + d * 1.1);
 
 /**
  * 結果をまとめて表示する
  */
 console.log(`\
-板のサイズ: ${WIDTH}mm x ${HEIGHT}mm
+板のサイズ: ${W}mm x ${H}mm
 
-点1: (${("" + x1).padStart(3, " ")}mm, ${("" + y1).padStart(3, " ")}mm)
-点2: (${("" + x2).padStart(3, " ")}mm, ${("" + y2).padStart(3, " ")}mm)
+点1: (${("" + x).padStart(3, " ")}mm, ${("" + y).padStart(3, " ")}mm)
+点2: (${("" + X).padStart(3, " ")}mm, ${("" + Y).padStart(3, " ")}mm)
 
-2点間の距離: ${distance.toFixed(2)}mm
-紐の長さ: ${ropeLength}mm
-(倍率 : 約${(ropeLength / distance).toFixed(2)}倍)
+2点間の距離: ${d.toFixed(2)}mm
+紐の長さ: ${r}mm
+(倍率 : 約${(r / d).toFixed(2)}倍)
 `);
